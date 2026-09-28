@@ -1,0 +1,1880 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link href="bootstraps/css/bootstrap.min.css" rel="stylesheet" /><link href="datatabel/css/jquery.dataTables.min.css" rel="stylesheet" /><link href="fonts/css/all.css" rel="stylesheet" />
+    <script src="bootstraps/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="bootstraps/js/popper.min.js"></script>
+    <script src="bootstraps/js/bootstrap.min.js"></script>
+    <link href="css/StyleSheet.css" rel="stylesheet" />
+    <script src="datatabel/js/jquery.dataTables.min.js"></script>
+  
+
+ 
+    <title>
+	كلية العلوم بنين اسيوط
+</title>
+
+    <!-- Favicon الأساسي -->
+    <link rel="icon" type="images" href="/images/Logo.ico" /><link rel="shortcut icon" type="images" href="/images/Logo.ico" />
+    
+    <!-- للشعارات الحديثة -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/Logo.png" /><link rel="icon" type="image/png" sizes="16x16" href="/images/Logo.png" />
+    
+    <!-- لأجهزة Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Logo.ico" />
+    
+    <!-- للويندوز -->
+    <meta name="msapplication-TileColor" content="#da532c" /><meta name="msapplication-config" content="/images/Logo.png" /><meta name="theme-color" content="#ffffff" />
+
+       <script src="https://cdn.jsdelivr.net/npm/hijri-date@1.0.4/hijri-date.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ 
+  <style>
+        .ticker-content {
+            flex-grow: 1;
+            overflow: hidden;
+            position: relative;
+            height: 24px;
+        }
+        
+        .ticker-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            white-space: nowrap;
+            animation: ticker-scroll 30s linear infinite;
+        }
+        
+        .ticker-item {
+            display: inline-block;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .ticker-item:after {
+            content: "•";
+            position: absolute;
+            right: -5px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .ticker-item:last-child:after {
+            display: none;
+        }
+        
+        .ticker-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .ticker-item a:hover {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+        
+        :root {
+            --primary-color: #d82f2f;
+            --secondary-color: #1a237e;
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+            --gray-color: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .date-time {
+            display: flex;
+            align-items: center;
+        }
+        
+        .social-links a {
+            color: white;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 30px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+        .search-boxNew {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 30px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+        .search-box input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 5px;
+            outline: none;
+        }
+        
+        .search-box button {
+            border: none;
+            background: transparent;
+            color: var(--light-color);
+            cursor: pointer;
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+        }
+        
+        .main-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        .main-menu li {
+            position: relative;
+        }
+        
+        .main-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .main-menu li a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: blue;
+            width: 200px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .main-menu li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu li a {
+            color: var(--dark-color);
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        .breaking-news {
+            background-color: var(--gray-color);
+            color: white;
+            padding: 10px 0;
+        }
+        
+        .breaking-news-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breaking-label {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        
+        .breaking-content {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+        
+        .breaking-content marquee {
+            font-weight: bold;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .featured-article {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .featured-image {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .featured-article:hover .featured-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-category {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .article-content {
+            padding: 20px;
+        }
+        
+        .article-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+            font-size: 14px;
+        }
+        
+        .article-meta span {
+            margin-left: 20px;
+        }
+        
+        .article-meta i {
+            margin-right: 5px;
+        }
+        
+        .article-excerpt {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .news-card {
+            background-color: white;
+                    direction: rtl  ;
+    border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+         .news-imageNN {
+             
+          width: 80%;
+            height: 80%;
+        width: auto;
+    height: auto;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 15px;
+            direction:rtl;
+        }
+        
+        .card-category {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            direction:rtl;
+            text-align: right;
+        }
+        
+        .card-excerpt {
+            color: var(--gray-color);
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            direction:rtl;
+            text-align: right;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-color);
+            font-size: 12px;
+        }
+        
+        .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 120px;
+        }
+        
+        .sidebar-title {
+            font-size: 20px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            position: relative;
+            text-align: right;
+     }
+        .news-tabs {
+            font-size: 16px;
+            text-align: right;
+     }
+        .myLeft-tabs {
+            font-size: 16px;
+            text-align: left;
+     }
+        .sidebar-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .popular-news {
+            margin-bottom: 30px;
+        }
+        
+        .popular-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .popular-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .popular-image {
+            width: 80px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        
+        .popular-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .popular-title {
+            font-size: 14px;
+            color: var(--dark-color);
+        }
+        
+        .categories-list {
+            list-style: none;
+        }
+        
+        .categories-list li {
+            margin-bottom: 10px;
+        }
+        
+        .categories-list li a {
+            display: block;
+            padding: 10px;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .categories-list li a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .newsletter {
+            margin-top: 30px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .newsletter-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links li a:hover {
+            color: var(--primary-color);
+            padding-right: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+            color: #bbb;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                width: 100%;
+                margin: 15px 0;
+            }
+            
+            .main-menu {
+                flex-wrap: wrap;
+            }
+            
+            .main-menu li {
+                width: 50%;
+                text-align: center;
+            }
+            
+            .dropdown-menu {
+                width: 100%;
+            }
+            
+            .featured-image {
+                height: 250px;
+            }
+            
+            .article-title {
+                font-size: 22px;
+            }
+        }
+
+        /* للهواتف الذكية */
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+
+            .hijri-date {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: #1a237e;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+
+    </style>
+  
+
+    
+    <style type="text/css">
+        .auto-style1 {
+            text-align: right;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style4 {
+            text-align: right;
+            height: 37px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style6 {
+            text-align: right;
+            height: 35px;
+            border-top-style: solid;
+            border-top-color: #CC0000;
+            border-bottom-style: solid;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style7 {
+            text-align: right;
+            height: 31px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style14 {
+            text-align: right;
+            height: 32px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style15 {
+            text-align: right;
+            height: 35px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style16 {
+            text-align: right;
+            height: 29px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style17 {
+            text-align: right;
+            height: 39px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style18 {
+            text-align: right;
+            height: 38px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style19 {
+            text-align: right;
+            height: 34px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style20 {
+            text-align: right;
+            height: 36px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style21 {
+            text-align: right;
+            height: 30px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style22 {
+            text-align: left;
+            height: 39px;
+        }
+        .auto-style23 {
+            height: 39px;
+        }
+        .auto-style24 {
+            text-align: right;
+            height: 33px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style25 {
+            text-align: right;
+            height: 27px;
+            border-top-color: #CC0000;
+            border-bottom-color: #CC0000;
+        }
+        .auto-style26 {
+            text-align: right;
+            height: 27px;
+        }
+        .auto-style27 {
+            text-align: right;
+            height: 33px;
+        }
+        .auto-style28 {
+            text-align: right;
+            height: 36px;
+        }
+        .auto-style29 {
+            text-align: right;
+            height: 32px;
+        }
+        .auto-style30 {
+            text-align: right;
+            height: 30px;
+        }
+        .auto-style31 {
+            text-align: right;
+            height: 32px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style32 {
+            text-align: right;
+            height: 35px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style33 {
+            text-align: right;
+            height: 29px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style34 {
+            text-align: right;
+            height: 39px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style35 {
+            text-align: right;
+            height: 38px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style36 {
+            text-align: right;
+            height: 34px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style37 {
+            text-align: right;
+            height: 36px;
+            border-top-style: solid;
+            border-top-color: #330099;
+            border-bottom-style: solid;
+            border-bottom-color: #330099;
+        }
+        .auto-style38 {
+            height: 35px;
+        }
+        .auto-style39 {
+            text-align: right;
+            height: 35px;
+        }
+        .auto-style41 {
+        text-align: left;
+        height: 36px;
+    }
+    .auto-style42 {
+        height: 39px;
+        text-align: right;
+    }
+    </style>
+
+</head>
+<body>
+
+
+
+
+
+   
+
+
+
+
+  
+    <div class="top-bar">
+        <div class="container flex-container">
+            <div class="date-time">
+                <i class="far fa-calendar-alt"></i>
+                <span id="current-date"> </span>
+<div  id="hijriDate"></div>
+
+    <script>
+        // الحصول على التاريخ الهجري الحالي
+        const today = new Date();
+        const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        }).format(today);
+
+        document.getElementById('hijriDate').textContent = `.  ||  .${hijriDate}`;
+    </script>
+
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Science.Azhar.Assuit"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <div class="flex-container" style="padding: 12px 0;">
+                <a href="#" class="logo">كلية العلوم بنين اسيوط <img src="Imeges/Logo2.png" alt="Logo" style="width:40px;"> <span>جامعة الأزهر</span>
+                                
+
+
+                </a>
+
+            </div>
+            
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="/HomePage.aspx"><i class="fas fa-home"></i> الرئيسية</a></li>
+
+                      <li><a href="/Staff.aspx"><i class="fas fa-solid fa-circle-user"></i> هيئة التدريس</a></li>
+                  
+                    <li><a href="/LibraryN.aspx"><i class="fa-solid fa-book-open-reader"></i> مكتبة الكلية</a></li>
+                    <li class="nav-itemLi dropdown">
+                <a class="fas fa-chart-line" href="#" id="navbarStudentGraduate" data-toggle="dropdown" >
+                    الدراسات العليا
+                    <i class="fas fa-angle-down"></i>
+                </a>
+                <div class="dropdown-menu" >
+                    <a class="dropdown-item" href="/Graduate_New.aspx">حساب جديد</a>
+                    <a class="dropdown-item" href="/Graduate_guarantee.aspx">تمهيدي</a>
+                    <a class="dropdown-item" href="/Graduate_Master.aspx">ماجستير</a>
+                    <a class="dropdown-item" href="/Graduate_PHD.aspx">دكتوراه</a>
+                </div>
+                      </li>
+                    
+                   
+                    <li class="nav-itemLi dropdown">
+                <a class="fas fa-solid fa-person" href="#" id="navbarStudentUnder" data-toggle="dropdown" >
+                    طلاب الكلية
+                    <i class="fas fa-angle-down"></i>
+                </a>
+                <div class="dropdown-menu" >
+                    <a class="dropdown-item" href="/StudentUnder.aspx">الطلاب</a>
+                    <a class="dropdown-item" href="/Graduate.aspx">الخريجون</a>
+                    <a class="dropdown-item" href="/Certificate_Date.aspx">حجز للشهادات</a>
+                    <a class="dropdown-item" href="/Change_Section.aspx">تعديل الشعبة</a>
+                </div>
+                      </li>
+                  
+                    <li><a href="/Results.aspx"><i class="fas fa-solid fa-r"></i> نتيجة الطلاب</a></li>
+                    <li><a href="/StudyPrograms.aspx"><i class="fas fa-laptop-code"></i> البرامج الدراسية</a></li>
+                    <li><a href="/Quality_Unit.aspx"><i class="fa-solid fa-award-simple"></i> وحدة الجودة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+      
+
+    <form method="post" action="./results" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjAyODA0NTYzMQ9kFgJmD2QWBgIDD2QWAgIBD2QWBAIDD2QWcAIBDw8WAh4EVGV4dAUEMjAyNmRkAgMPDxYCHwAFENin2YTYudin2YU6IDIwMjZkZAIFDw8WAh8ABQExZGQCBw8PFgIfAAUi2KfZhNi52KfZhSDYp9mE2K/Ysdin2LPZiiDZg9in2YXZhGRkAgkPDxYCHwAFATFkZAILDw8WAh8ABQQyMDI2ZGQCDw8PFgIfAAUBMGRkAhEPDxYCHwAFATBkZAITDw8WAh8ABQEyZGQCGQ8PFgIfAAUBMWRkAh8PD2QWAh4FdmFsdWUFAzEyM2QCKQ8QZGQWAWZkAi0PDxYCHwAFCDIwMjYwNjc0ZGQCLw8PFgIeB1Zpc2libGVnZGQCMQ8PFgIfAAVz2KfZhNmB2LHZgtipOiAgINin2YTYo9mI2YTZiSAgICAgICAgLS0tLS0gICAgICAgINin2YTYtNi52KjYqTogICDYtNi52KjYqSDYudmE2YjZhSDZgdmK2LLZitin2KbZitipINmI2LHZitin2LbZitipMWRkAjMPDxYCHwAFStiy2YrYp9ivINmF2K3ZhdivINi52YXYp9ix2Ycg2YXZiNiz2Ykg2KfYrdmF2K8gICAg2KfZhNiq2LHYqtmK2KggICggICAyNCkgZGQCNQ8PFgIfAAUxICAgINix2YLZhSDZhNis2YbYqSDYp9mE2KfZhdiq2K3Yp9mG2KfYqiAgKCAgIDUpIGRkAjcPZBYKAgEPDxYCHwAFJCAgICDYsdmC2YUg2KfZhNis2YTZiNizICAoICAgMTIwMTApIGRkAgUPDxYCHwAFV9in2YTZgdiq2LHYqTogINin2YTZgdiq2LHYqSDYp9mE2LXYqNin2K3ZitipINmF2YYg2KfZhNiz2KfYudipIDkg2KfZhNmJINin2YTYs9in2LnYqSAxMmRkAgcPDxYCHwAFetmF2YPYp9mGINin2YTZhNis2YbYqTogINin2YTYr9mI2LEg2KfZhNij2YjZhCAtINmF2YXYsSBb77qgXSDYo9mF2KfZhSDZhdi52YXZhCDZg9mH2LHYqNmK2Kkge9ijfSDZhdio2YbZiiDYp9mE2YHZitiy2YrYp9ihZGQCCQ8PFgIfAGVkZAILDw8WAh8AZWRkAjkPZBYCAgEPPCsAEQIBEBYAFgAWAAwUKwAAZAI7Dw8WAh8CZ2RkAj0PDxYCHwJnZGQCPw8PFgIfAmhkZAJBDw8WAh8CaGRkAlUPPCsAEQMADxYEHgtfIURhdGFCb3VuZGceC18hSXRlbUNvdW50AgdkARAWABYAFgAMFCsAABYCZg9kFhACAQ9kFghmDw8WAh8ABQUxMjAxMGRkAgEPDxYCHwAFI9in2YTZg9mK2YXZitin2KEg2KfZhNi52KfZhdipIDEwNF8xZGQCAw8PFgIfAAUBMWRkAgYPDxYCHwAFBDIwMjZkZAICD2QWCGYPDxYCHwAFBTEyMDEwZGQCAQ8PFgIfAAUw2K3Ysdin2LHYqSDZiNiv2YrZhtin2YXZitmD2Kcg2K3Ysdin2LHZitipIDEwM18xZGQCAw8PFgIfAAUBMWRkAgYPDxYCHwAFBDIwMjZkZAIDD2QWCGYPDxYCHwAFBTEyMDEwZGQCAQ8PFgIfAAUW2K/ZitmG2KfZhdmK2YPYpyAxMTJfMWRkAgMPDxYCHwAFATFkZAIGDw8WAh8ABQQyMDI2ZGQCBA9kFghmDw8WAh8ABQUxMjAxMGRkAgEPDxYCHwAFGdi52YLZitiv2Kkg2YjYp9iu2YTYp9mCXzFkZAIDDw8WAh8ABQExZGQCBg8PFgIfAAUEMjAyNmRkAgUPZBYIZg8PFgIfAAUFMTIwMTBkZAIBDw8WAh8ABRPZgtix2KLZhiDZg9ix2YrZhV8xZGQCAw8PFgIfAAUBMWRkAgYPDxYCHwAFBDIwMjZkZAIGD2QWCGYPDxYCHwAFBTEyMDEwZGQCAQ8PFgIfAAUZ2YTYutipINin2YbYrNmE2YrYstmK2KlfMWRkAgMPDxYCHwAFATFkZAIGDw8WAh8ABQQyMDI2ZGQCBw9kFghmDw8WAh8ABQUxMjAxMGRkAgEPDxYCHwAFENmH2YbYr9iz2KkgMTAzXzFkZAIDDw8WAh8ABQExZGQCBg8PFgIfAAUEMjAyNmRkAggPDxYCHwJoZGQCVw8WAh8CaBYCAgEPFgIfAmhkAlkPFgIfAmhkAlsPFgIfAmhkAl0PFgIfAmhkAl8PFgIfAmhkAmEPFgIfAmhkAmMPFgIfAmhkAmUPFgIfAmhkAmcPFgIfAmhkAmsPDxYCHwJnZGQCbQ8PFgIfAmhkZAJvDw8WAh8ABS7YstmK2KfYryDZhdit2YXYryDYudmF2KfYsdmHINmF2YjYs9mJINin2K3ZhdivZGQCcQ8WAh8CaGQCcw8WAh8CaBYGAgUPEA8WAh4HRW5hYmxlZGhkZBYBZmQCCQ8QDxYCHwVoZGQWAWZkAg0PDxYCHwJoZGQCdQ8WAh8CaBYKAgUPEA8WAh8FaGRkFgFmZAIJDxAPFgIfBWhkZBYBZmQCDQ8QDxYCHwVoZGQWAWZkAhEPEA8WAh8FaGRkFgFmZAIVDw8WAh8CaGRkAncPFgIfAmgWBgIFDxAPFgIfBWhkZBYBZmQCCQ8QDxYCHwVoZGQWAWZkAg0PDxYCHwJoZGQCeQ8WAh8CaBYGAgUPEA8WAh8FaGRkFgFmZAIJDxAPFgIfBWhkZBYBZmQCDQ8PFgIfAmhkZAJ7DxYCHwJoFgYCBQ8QDxYCHwVoZGQWAWZkAgkPEA8WAh8FaGRkFgFmZAINDw8WAh8CaGRkAn0PFgIfAmgWCgIFDxAPFgIfBWhkZBYBZmQCCQ8QDxYCHwVoZGQWAWZkAg0PEA8WAh8FaGRkFgFmZAIRDxAPFgIfBWhkZBYBZmQCFQ8PFgIfAmhkZAKBAQ8PFgIfAAUIMjAyNjA2NzRkZAKDAQ8PFgIfAmdkZAKFAQ88KwARBAAPFgQfA2cfBAIKZAEQFgZmAgECAgIDAgQCBRYGPCsABQEAFgIeCkhlYWRlclRleHQFFtix2YLZhSDYp9mE2KzZhNmI2LM+Pj48KwAFAQAWAh8GBQEwPCsABQEAFgIfBgUBMTwrAAUBABYCHwYFATA8KwAFAQAWAh8GBQEyPCsABQEAFgIfBgUBMRYGZmZmZmZmCxYEHgRfIVNCAoACHgVXaWR0aBsAAAAAAEB6QAEAAAAMFCsAABYCZg9kFhYCAQ9kFgxmDw8WAh8ABQYmbmJzcDtkZAIBDw8WBh8ABQEwHglCYWNrQ29sb3IKjQEfBwIIZGQCAg8PFgIfAAUBMGRkAgMPDxYGHwAFATAfCQqNAR8HAghkZAIEDw8WAh8ABQEwZGQCBQ8PFgIfAAUBMGRkAgIPZBYMZg8PFgIfAAUGJm5ic3A7ZGQCAQ8PFgIfAAUBMWRkAgIPDxYGHwAFATEfCQqNAR8HAghkZAIDDw8WAh8ABQExZGQCBA8PFgIfAAUBMWRkAgUPDxYGHwAFATEfCQqNAR8HAghkZAIDD2QWDGYPDxYCHwAFBiZuYnNwO2RkAgEPDxYCHwAFATJkZAICDw8WAh8ABQEyZGQCAw8PFgIfAAUBMmRkAgQPDxYGHwAFATIfCQqNAR8HAghkZAIFDw8WAh8ABQEyZGQCBA9kFgxmDw8WAh8ABQYmbmJzcDtkZAIBDw8WAh8ABQEzZGQCAg8PFgIfAAUBM2RkAgMPDxYCHwAFATNkZAIEDw8WAh8ABQEzZGQCBQ8PFgIfAAUBM2RkAgUPZBYMZg8PFgIfAAUGJm5ic3A7ZGQCAQ8PFgIfAAUBNGRkAgIPDxYCHwAFATRkZAIDDw8WAh8ABQE0ZGQCBA8PFgIfAAUBNGRkAgUPDxYCHwAFATRkZAIGD2QWDGYPDxYCHwAFBiZuYnNwO2RkAgEPDxYCHwAFATVkZAICDw8WAh8ABQE1ZGQCAw8PFgIfAAUBNWRkAgQPDxYCHwAFATVkZAIFDw8WAh8ABQE1ZGQCBw9kFgxmDw8WAh8ABQYmbmJzcDtkZAIBDw8WAh8ABQE2ZGQCAg8PFgIfAAUBNmRkAgMPDxYCHwAFATZkZAIEDw8WAh8ABQE2ZGQCBQ8PFgIfAAUBNmRkAggPZBYMZg8PFgIfAAUGJm5ic3A7ZGQCAQ8PFgIfAAUBN2RkAgIPDxYCHwAFATdkZAIDDw8WAh8ABQE3ZGQCBA8PFgIfAAUBN2RkAgUPDxYCHwAFATdkZAIJD2QWDGYPDxYCHwAFBiZuYnNwO2RkAgEPDxYCHwAFAThkZAICDw8WAh8ABQE4ZGQCAw8PFgIfAAUBOGRkAgQPDxYCHwAFAThkZAIFDw8WAh8ABQE4ZGQCCg9kFgxmDw8WAh8ABQYmbmJzcDtkZAIBDw8WAh8ABQE5ZGQCAg8PFgIfAAUBOWRkAgMPDxYCHwAFATlkZAIEDw8WAh8ABQE5ZGQCBQ8PFgIfAAUBOWRkAgsPDxYCHwJoZGQChwEPFgIfAmgWAgIBDzwrABEDAA8WBB8DZx8EZmQBEBYAFgAWAAwUKwAAZAKJAQ8PFgIfAmdkZAKLAQ88KwARAwAPFgQfA2cfBAIGZAEQFgAWABYADBQrAAAWAmYPZBYOAgEPZBYQZg8PFgYfAAUBMR8JCgAfBwIIZGQCAQ8PFgYfAAUW2KfYs9iq2KfYqtmK2YPYpyAxMTFfMR8JCgAfBwIIZGQCAw8PFgYfAAUI2LbYudmK2YEfCQoAHwcCCGRkAgYPDxYCHwAFBiZuYnNwO2RkAgcPDxYCHwAFBiZuYnNwO2RkAggPDxYCHwAFBiZuYnNwO2RkAgkPDxYCHwAFBDIwMjZkZAILDw8WAh8ABQIxNWRkAgIPZBYQZg8PFgYfAAUBMh8JCo0BHwcCCGRkAgEPDxYGHwAFHdiq2YHYp9i22YQg2YjYqtmD2KfZhdmEIDEwMV8xHwkKjQEfBwIIZGQCAw8PFgYfAAUP2LbYudmK2YEg2KzYr9inHwkKjQEfBwIIZGQCBg8PFgIfAAUGJm5ic3A7ZGQCBw8PFgIfAAUGJm5ic3A7ZGQCCA8PFgIfAAUGJm5ic3A7ZGQCCQ8PFgIfAAUEMjAyNmRkAgsPDxYCHwAFAjE4ZGQCAw9kFhBmDw8WBh8ABQEzHwkKjQEfBwIIZGQCAQ8PFgYfAAUM2KzYqNixIDEwMl8xHwkKjQEfBwIIZGQCAw8PFgYfAAUP2LbYudmK2YEg2KzYr9inHwkKjQEfBwIIZGQCBg8PFgIfAAUGJm5ic3A7ZGQCBw8PFgIfAAUGJm5ic3A7ZGQCCA8PFgIfAAUGJm5ic3A7ZGQCCQ8PFgIfAAUEMjAyNmRkAgsPDxYCHwAFAjE5ZGQCBA9kFhBmDw8WAh8ABQE0ZGQCAQ8PFgIfAAUV2YHZgtmHINin2LPZhNin2YXZiV8xZGQCAw8PFgIfAAUK2YXZgtio2YjZhGRkAgYPDxYCHwAFBiZuYnNwO2RkAgcPDxYCHwAFBiZuYnNwO2RkAggPDxYCHwAFBiZuYnNwO2RkAgkPDxYCHwAFBDIwMjZkZAILDw8WAh8ABQIxNGRkAgUPZBYQZg8PFgYfAAUBNR8JCo0BHwcCCGRkAgEPDxYGHwAFKNmD2YfYsdio2YrYqSDZiNiq2YrYp9ixINmF2KrYsdiv2K8gMTAyXzEfCQqNAR8HAghkZAIDDw8WBh8ABQ/Ytti52YrZgSDYrNiv2KcfCQqNAR8HAghkZAIGDw8WAh8ABQYmbmJzcDtkZAIHDw8WAh8ABQYmbmJzcDtkZAIIDw8WAh8ABQYmbmJzcDtkZAIJDw8WAh8ABQQyMDI2ZGQCCw8PFgIfAAUCMTdkZAIGD2QWEGYPDxYGHwAFATYfCQoAHwcCCGRkAgEPDxYGHwAFH9mF2YjYrNin2Kog2YjYqNi12LHZitin2KogMTAxXzEfCQoAHwcCCGRkAgMPDxYGHwAFCNi22LnZitmBHwkKAB8HAghkZAIGDw8WAh8ABQYmbmJzcDtkZAIHDw8WAh8ABQYmbmJzcDtkZAIIDw8WAh8ABQYmbmJzcDtkZAIJDw8WAh8ABQQyMDI2ZGQCCw8PFgIfAAUCMTZkZAIHDw8WAh8CaGRkAo0BDw8WAh8CZ2RkAo8BDzwrABEDAA8WBh8DZx8EAgcfAmdkARAWABYAFgAMFCsAABYCZg9kFhACAQ9kFhBmDw8WAh8ABQExZGQCAQ8PFgIfAAUj2KfZhNmD2YrZhdmK2KfYoSDYp9mE2LnYp9mF2KkgMTA0XzFkZAIDDw8WAh8ABQrZhdmC2KjZiNmEZGQCBg8PFgIfAAUGJm5ic3A7ZGQCBw8PFgIfAAUGJm5ic3A7ZGQCCA8PFgIfAAUGJm5ic3A7ZGQCCQ8PFgIfAAUEMjAyNmRkAgsPDxYCHwAFAjI0ZGQCAg9kFhBmDw8WBh8ABQEyHwkKAB8HAghkZAIBDw8WBh8ABTDYrdix2KfYsdipINmI2K/ZitmG2KfZhdmK2YPYpyDYrdix2KfYsdmK2KkgMTAzXzEfCQoAHwcCCGRkAgMPDxYGHwAFCNi22LnZitmBHwkKAB8HAghkZAIGDw8WAh8ABQYmbmJzcDtkZAIHDw8WAh8ABQYmbmJzcDtkZAIIDw8WAh8ABQYmbmJzcDtkZAIJDw8WAh8ABQQyMDI2ZGQCCw8PFgIfAAUCMjNkZAIDD2QWEGYPDxYGHwAFATMfCQqNAR8HAghkZAIBDw8WBh8ABRbYr9mK2YbYp9mF2YrZg9inIDExMl8xHwkKjQEfBwIIZGQCAw8PFgYfAAUP2LbYudmK2YEg2KzYr9inHwkKjQEfBwIIZGQCBg8PFgIfAAUGJm5ic3A7ZGQCBw8PFgIfAAUGJm5ic3A7ZGQCCA8PFgIfAAUGJm5ic3A7ZGQCCQ8PFgIfAAUEMjAyNmRkAgsPDxYCHwAFAjIyZGQCBA9kFhBmDw8WAh8ABQE0ZGQCAQ8PFgIfAAUZ2LnZgtmK2K/YqSDZiNin2K7ZhNin2YJfMWRkAgMPDxYCHwAFDdis2YrYryDYrNiv2KdkZAIGDw8WAh8ABQYmbmJzcDtkZAIHDw8WAh8ABQYmbmJzcDtkZAIIDw8WAh8ABQYmbmJzcDtkZAIJDw8WAh8ABQQyMDI2ZGQCCw8PFgIfAAUCMjBkZAIFD2QWEGYPDxYCHwAFATVkZAIBDw8WAh8ABRPZgtix2KLZhiDZg9ix2YrZhV8xZGQCAw8PFgIfAAUG2KzZitivZGQCBg8PFgIfAAUGJm5ic3A7ZGQCBw8PFgIfAAUGJm5ic3A7ZGQCCA8PFgIfAAUGJm5ic3A7ZGQCCQ8PFgIfAAUEMjAyNmRkAgsPDxYCHwAFAjEzZGQCBg9kFhBmDw8WAh8ABQE2ZGQCAQ8PFgIfAAUZ2YTYutipINin2YbYrNmE2YrYstmK2KlfMWRkAgMPDxYCHwAFDdis2YrYryDYrNiv2KdkZAIGDw8WAh8ABQYmbmJzcDtkZAIHDw8WAh8ABQYmbmJzcDtkZAIIDw8WAh8ABQYmbmJzcDtkZAIJDw8WAh8ABQQyMDI2ZGQCCw8PFgIfAAUCMjVkZAIHD2QWEGYPDxYGHwAFATcfCQqNAR8HAghkZAIBDw8WBh8ABRDZh9mG2K/Ys9ipIDEwM18xHwkKjQEfBwIIZGQCAw8PFgYfAAUP2LbYudmK2YEg2KzYr9inHwkKjQEfBwIIZGQCBg8PFgIfAAUGJm5ic3A7ZGQCBw8PFgIfAAUGJm5ic3A7ZGQCCA8PFgIfAAUGJm5ic3A7ZGQCCQ8PFgIfAAUEMjAyNmRkAgsPDxYCHwAFAjIxZGQCCA8PFgIfAmhkZAKRAQ8PFgIfAmdkZAKTAQ88KwARAwAPFgQfA2cfBGZkARAWABYAFgAMFCsAAGQClQEPDxYCHwJnZGQClwEPPCsAEQMADxYEHwNnHwQCAWQBEBYBAgQWATwrAAUBABYCHwZlFgFmDBQrAAAWAmYPZBYEAgEPZBYKZg8PFgIfAAUK2LHYp9iz2YDYqGRkAgEPDxYCHwAFBiZuYnNwO2RkAgIPDxYCHwAFBiZuYnNwO2RkAgMPDxYCHwAFBiZuYnNwO2RkAgQPDxYCHwAFBiZuYnNwO2RkAgIPDxYCHwJoZGQCmQEPDxYCHwJnZGQCBQ8WAh8CaGQCBQ8PFgIfAAUk2KfZhtiqINin2YTYstin2KbYsSDYsdmC2YUgIDE1MDIxMDgyZGQCCw8PFgIfAAUCMjJkZBgIBSNjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJEdyaWRWaWV3Mg9nZAUjY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRHcmlkVmlldzEPPCsADAEIZmQFI2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkR3JpZFZpZXc5DzwrAAwBCAIBZAUnY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRHcmlkVmlld1Rlcm0zDzwrAAwBCAIBZAUjY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRHcmlkVmlldzYPPCsADAEIAgFkBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJEdyaWRWaWV3VGVybTIPPCsADAEIAgFkBSNjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJEdyaWRWaWV3NQ88KwAMAQhmZAUnY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRHcmlkVmlld1Rlcm0xDzwrAAwBCAIBZOCcrUIF6FNm+XRCAJ9PAC/gUrpqGhmXpwdA2pAEPhE8" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="63301E89" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdACgB9FjvuBlfo8PMR/YdArD/kHSRJF90eaUK7BFqHOpR3Tunnhk4GnfJLKoQ630ZfME8jPr6fTi4bEOoqMBfA9AojDu35o5CUn6umW4JNpE1pwwxJ/gtj0BCTO3kE0T4+rcX+1tirnCClwlHWrufQmwjAQjZqmiIyy1lS0OvTMu3utn+7jFVB3x+dYxx5kFDZ5S9qegBcRyQ6QoUe9KdtL3hFrtuiN9peDBF5IzZNdI4846oTg10qfs5roSKBOLrqA5+fvBaUZBkNemK1V25A+lBKqlbk40Ydo9eynyueDyKXR/vs+Bz4vaEjFmRCWXl7XEAOQZKcJSFcSwpVkUAJWpxI3kcDyubzJ5ThSh6DF07bxwndNjOh9SXj2QXSPllbOTRhV/+9b2nFfRWZH09WKoFvvaQ8x7+0O3C1dbA3wbGw0Nx21maMlkehOi73ckXeEJD+Enj4F/3/slThQGHXEmMTco2gmG7h8QLNRolmoPBdTVgHx5OSxxzcY9ThEwonk0cFmEEI46QLxbOOVvPKSClghe/n2Vf0ygH/l2VenycE/+l31QaDogLFJhBHtih2W8dilan0Gec00KLGXVmtYbjscP+picFBDuWDQx0PqMabO3sV3AOWkWznlVVbKlb9A42iuKuceIZCkKBouoKqljGQglYXPLtWhMXRROdXYl+Fd/Lain5IDyzBNYZDNWoPfBliyAZdOIE1+28Vq+fo8GSdwGjuCbGepGqwBFgoaVpOdUAk8/I7hPNoGAqJ05aw7BFEq0kXqkPKfXZKgXNTXPCKUEoP4HtH5j4l9HGWFpwr3+i/k3kwblMxvYJmjmIxJThWS0szqHTXu8OjdEWLflItN64fqrRyO95otj+Fe1EUgp1xsumhBPxXwiYoWM+H2w=" />
+</div>
+      <div class="text-center">
+                <span id="ContentPlaceHolder1_Label5" style="color:Black;background-color:#F0F0F0;font-family:Times New Roman;font-size:X-Large;font-weight:bold;text-decoration:none;">'''                   خدمات رقمية لطلاب كلية العلوم جامعة الأزهر فرع أسيوط                      '''</span>
+            </div>
+    
+   <div id="ContentPlaceHolder1_AllLabels" class="text-center" dir="rtl">
+       <div >
+<table class="w-100">
+            <tr>
+                <td class="text-center">
+                    <table class="w-100" dir="rtl" style="background-color:#F0F0F0">
+                        <tr>
+                            <td class="text-left">
+                                &nbsp;</td>
+                            <td class="auto-style19">
+                                
+                            </td>
+                            <td class="auto-style17">
+                                <input name="ctl00$ContentPlaceHolder1$TxtCyear" type="text" value="العام: 2026" id="ContentPlaceHolder1_TxtCyear" disabled="disabled" class="aspNetDisabled" style="font-size:X-Large;width:127px;" />
+                            </td>
+                            <td class="text-right">
+
+                                
+
+                                <span id="ContentPlaceHolder1_TxtTearm" style="color:Red;font-family:Times New Roman;font-size:X-Large;">العام الدراسي كامل</span>
+
+                            </td>
+                            <td class="auto-style27">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">
+                                </td>
+                            <td class="auto-style19">
+                                
+                                </td>
+                            <td class="auto-style17">
+
+                                
+
+                                </td>
+                            <td class="text-right">
+
+                                
+
+                                
+
+                                </td>
+                            <td class="auto-style27"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style28">&nbsp;</td>
+                            <td class="auto-style18">
+                                
+                                
+                            </td>
+                            <td class="text-left">
+                                <span id="ContentPlaceHolder1_Label47" style="font-family:Times New Roman;font-size:X-Large;">اسم الدخول</span>
+                            </td>
+                            <td class="text-right">
+                                <input name="ctl00$ContentPlaceHolder1$UserName" type="text" value="30711111309394" id="ContentPlaceHolder1_UserName" style="font-size:X-Large;width:228px;" />
+                                
+                            </td>
+                            <td class="auto-style16">&nbsp;</td>
+                            <td class="auto-style28">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style28"></td>
+                            <td class="auto-style18">
+                                
+                            </td>
+                            <td class="text-left">
+                                <span id="ContentPlaceHolder1_Label39" style="font-family:Times New Roman;font-size:X-Large;">كلمة المرور</span>
+                            </td>
+                            <td class="text-right">
+                                <input name="ctl00$ContentPlaceHolder1$Passowrd_NO" type="password" id="ContentPlaceHolder1_Passowrd_NO" value="123" style="font-size:X-Large;width:229px;" />
+                            </td>
+                            <td class="auto-style16"></td>
+                            <td class="auto-style28"></td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style28">&nbsp;</td>
+                            <td class="auto-style18">
+                                &nbsp;</td>
+                            <td class="text-right" colspan="2">
+                                <span id="ContentPlaceHolder1_TextSection0" style="color:Red;font-family:Times New Roman;font-size:X-Large;">في المرة الاولى فقط اسم المستخدم == الرقم القومي&nbsp;</span>
+                            </td>
+                            <td class="auto-style16">&nbsp;</td>
+                            <td class="auto-style28">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style28">&nbsp;</td>
+                            <td class="auto-style18">
+                                &nbsp;</td>
+                            <td class="text-right" colspan="2">
+                                <span id="ContentPlaceHolder1_TextSection1" style="color:Red;font-family:Times New Roman;font-size:X-Large;">كلمة المرور == 123</span>
+                            </td>
+                            <td class="auto-style16">&nbsp;</td>
+                            <td class="auto-style28">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style28">&nbsp;</td>
+                            <td class="auto-style18">
+                                
+                            </td>
+                            <td class="auto-style30" colspan="2">
+                                <h2 class="text-right">&nbsp;</h2>
+                            </td>
+                            <td class="auto-style16">&nbsp;</td>
+                            <td class="auto-style28">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td class="auto-style25">
+                                
+                            </td>
+                            <td class="auto-style14">
+                                
+                            </td>
+                            <td class="text-right">
+                                <em>
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$Button1" value="اضغط هنا لعرض النتيجة" id="ContentPlaceHolder1_Button1" style="background-color:#DDDDDD;font-family:Times New Roman;font-size:X-Large;font-weight:bold;width:260px;" />
+                                </em>
+                            </td>
+                            <td class="auto-style24">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td class="auto-style25">
+                                &nbsp;</td>
+                            <td class="auto-style14">
+                                &nbsp;</td>
+                            <td class="text-right">
+                                &nbsp;</td>
+                            <td class="auto-style27">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td class="auto-style25">
+                                
+                            </td>
+                            <td colspan="2">
+                                <em>
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$Button12" value="تغيير اسم المستخدم وكلمة المرور" id="ContentPlaceHolder1_Button12" style="background-color:#FFCC00;border-color:#FFCC99;font-family:Times New Roman;font-size:X-Large;font-weight:bold;height:39px;width:273px;" />
+                                </em>
+                            </td>
+                            <td class="auto-style24">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </table>
+
+            <div class="text-center">
+
+                <table class="w-100" dir="rtl">
+                    <tr>
+                        <td class="auto-style42">
+
+                                <span id="ContentPlaceHolder1_TextSection" style="color:Red;font-family:Times New Roman;font-size:X-Large;">الفرقة:   الأولى        -----        الشعبة:   شعبة علوم فيزيائية ورياضية1</span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style42">
+
+                                <span id="ContentPlaceHolder1_TextBox1" style="color:Red;font-family:Times New Roman;font-size:X-Large;">زياد محمد عماره موسى احمد    الترتيب  (   24) </span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style42">
+
+                                <span id="ContentPlaceHolder1_TextBoxLagna" style="color:Red;font-family:Times New Roman;font-size:X-Large;">    رقم لجنة الامتحانات  (   5) </span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style23">
+
+                          <div id="ContentPlaceHolder1_LagnaShow" class="header" dir="rtl">
+
+
+
+
+                              <table class="w-100" dir="rtl">
+                                  <tr>
+                                      <td class="text-right">
+
+                                <span id="ContentPlaceHolder1_TextBox2Grade0" style="color:Red;font-family:Times New Roman;font-size:X-Large;">    رقم الجلوس  (   12010) </span>
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="text-right">
+
+                                <span id="ContentPlaceHolder1_TextBoxLagna1" style="color:Red;font-family:Times New Roman;font-size:X-Large;"></span>
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="text-right">
+
+                                <span id="ContentPlaceHolder1_TextBoxLagna2" style="color:Red;font-family:Times New Roman;font-size:X-Large;">الفترة:  الفترة الصباحية من الساعة 9 الى الساعة 12</span>
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="text-right">
+
+                                <span id="ContentPlaceHolder1_TextBoxLagna0" style="color:Red;font-family:Times New Roman;font-size:X-Large;">مكان اللجنة:  الدور الأول - ممر [ﺠ] أمام معمل كهربية {أ} مبني الفيزياء</span>
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="text-right">
+
+                                <span id="ContentPlaceHolder1_TextBox2Grade" style="color:Red;font-family:Times New Roman;font-size:X-Large;"></span>
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="text-right">
+
+                                <span id="ContentPlaceHolder1_TextBoxNesba" style="color:Red;font-family:Times New Roman;font-size:X-Large;"></span>
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+
+                                          &nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                      <td>&nbsp;</td>
+                                  </tr>
+                              </table>
+
+
+
+
+                            </div>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style23">
+                                                                                   <div id="ContentPlaceHolder1_Teacher2" class="text-center" dir="rtl">
+                                <h2>
+                                    <div>
+
+</div>
+                                </h2>
+                            </div>
+  
+
+
+                             <div>
+
+
+
+                                <table class="w-100" dir="rtl">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" colspan="2">
+
+                                <span id="ContentPlaceHolder1_TextBoxNesba1" style="color:Red;font-family:Times New Roman;font-size:X-Large;"></span>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" colspan="2">
+
+                                <span id="ContentPlaceHolder1_TextBoxNesba0" style="color:Red;font-family:Times New Roman;font-size:X-Large;"></span>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">
+
+                            
+
+                                        </td>
+                                        <td class="text-right">
+
+                                
+                                <em>
+
+                            
+
+                            
+
+                            
+
+                                </em>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                <em>
+
+                            
+
+                            
+
+                                </em>
+
+                                        </td>
+                                        <td>
+                                <em>
+                                
+
+                            
+
+                            
+
+                            
+
+                                </em>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="text-center">
+
+                    <div>
+	<table cellspacing="2" cellpadding="3" rules="all" id="ContentPlaceHolder1_GridViewTerm3" style="background-color:#DEBA84;border-color:#DEBA84;border-width:1px;border-style:None;font-family:Times New Roman;font-size:Large;width:1004px;">
+		<tr style="color:White;background-color:#A55129;font-weight:bold;">
+			<th scope="col">جلوس</th><th scope="col">اسم المقرر</th><th scope="col">رقم الفصل</th><th scope="col">عام</th><th scope="col">المحاضرات</th>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>12010</td><td>الكيمياء العامة 104_1</td><td>1</td><td>2026</td><td><input type="button" value="عرض ملفات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm3&#39;,&#39;ShowFiles$0&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>12010</td><td>حرارة وديناميكا حرارية 103_1</td><td>1</td><td>2026</td><td><input type="button" value="عرض ملفات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm3&#39;,&#39;ShowFiles$1&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>12010</td><td>ديناميكا 112_1</td><td>1</td><td>2026</td><td><input type="button" value="عرض ملفات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm3&#39;,&#39;ShowFiles$2&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>12010</td><td>عقيدة واخلاق_1</td><td>1</td><td>2026</td><td><input type="button" value="عرض ملفات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm3&#39;,&#39;ShowFiles$3&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>12010</td><td>قرآن كريم_1</td><td>1</td><td>2026</td><td><input type="button" value="عرض ملفات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm3&#39;,&#39;ShowFiles$4&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>12010</td><td>لغة انجليزية_1</td><td>1</td><td>2026</td><td><input type="button" value="عرض ملفات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm3&#39;,&#39;ShowFiles$5&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>12010</td><td>هندسة 103_1</td><td>1</td><td>2026</td><td><input type="button" value="عرض ملفات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm3&#39;,&#39;ShowFiles$6&#39;)" /></td>
+		</tr>
+	</table>
+</div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+
+                            </div>
+
+
+
+                                      
+     
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style23">
+                                         
+  
+              
+                           
+             
+  
+
+                                                                                  
+
+                            
+                             
+                            
+
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+
+                                <span id="ContentPlaceHolder1_TextBox10" style="color:Red;font-family:Times New Roman;font-size:X-Large;"></span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+
+                                <em>
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$Button5" value="اضغط هنا لعرض نسبة الفصل الدراسي الاول" id="ContentPlaceHolder1_Button5" style="background-color:#DDDDDD;font-family:Times New Roman;font-size:X-Large;font-weight:bold;width:362px;" />
+                                </em>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+
+                                
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style23">
+     
+                                &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style23">
+
+                            
+                                    <strong>
+                                
+                                    </strong>
+                                </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style23">
+
+ 
+                         
+                            &nbsp;
+
+       
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style23">
+
+                            
+                                &nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style23">
+
+      
+                                                   
+    
+                            &nbsp;
+                            <div>
+
+                                                                                    
+    
+
+
+
+                                
+                                     
+  
+
+                                
+                                                
+
+                                           
+       
+
+
+                                                            
+      
+
+
+
+                                                        
+      
+
+
+
+
+                            </div>
+
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style23">
+
+                                
+
+                                
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">
+
+                            <span id="ContentPlaceHolder1_Label15" style="color:Black;background-color:#F0F0F0;font-family:Times New Roman;font-size:X-Large;font-weight:bold;text-decoration:none;">'''                   كيفية تظليل رقم الجلوس فى الامتحانات البابل شيت- يجب تظليل دائرة الرقم بالكامل                      '''</span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+
+                             <div>
+	<table cellspacing="0" cellpadding="4" rules="all" id="ContentPlaceHolder1_GridView6" style="background-color:White;border-color:#CC9966;border-width:1px;border-style:None;font-family:Times New Roman;font-size:Large;width:420px;border-collapse:collapse;">
+		<tr style="color:#FFFFCC;background-color:#990000;font-weight:bold;">
+			<th scope="col">رقم الجلوس&gt;&gt;&gt;</th><th scope="col">0</th><th scope="col">1</th><th scope="col">0</th><th scope="col">2</th><th scope="col">1</th>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td style="background-color:Red;">0</td><td>0</td><td style="background-color:Red;">0</td><td>0</td><td>0</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>1</td><td style="background-color:Red;">1</td><td>1</td><td>1</td><td style="background-color:Red;">1</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>2</td><td>2</td><td>2</td><td style="background-color:Red;">2</td><td>2</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>8</td><td>8</td><td>8</td><td>8</td><td>8</td>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>&nbsp;</td><td>9</td><td>9</td><td>9</td><td>9</td><td>9</td>
+		</tr>
+	</table>
+</div>
+
+                        </td>
+                    </tr>
+                    </table>
+
+            </div>
+             
+
+            
+            <table class="auto-style6" dir="rtl">
+            <tr>
+                <td class="text-center">
+                    <table class="w-100" dir="rtl">
+                        <tr>
+                            <td class="text-right">
+
+                            <span id="ContentPlaceHolder1_Label37" style="color:White;background-color:#FF3300;font-family:Times New Roman;font-size:X-Large;font-weight:bold;text-decoration:none;">'''                   سجل درجات الطالب من العام الحالي الفصل الدراسي الاول                      '''</span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+
+                    <div>
+	<table cellspacing="2" cellpadding="3" rules="all" id="ContentPlaceHolder1_GridViewTerm1" style="background-color:#DEBA84;border-color:#DEBA84;border-width:1px;border-style:None;font-family:Times New Roman;font-size:Large;width:1004px;">
+		<tr style="color:White;background-color:#A55129;font-weight:bold;">
+			<th scope="col">م</th><th scope="col">اسم المقرر</th><th scope="col">التقدير</th><th scope="col">الشفوي</th><th scope="col">العملي</th><th scope="col">اعمال السنة</th><th scope="col">لعام</th><th scope="col">استبيان</th><th scope="col">&nbsp;</th><th scope="col">محاضرات</th>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>1</td><td>استاتيكا 111_1</td><td>جيد جدًا</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;Questionnaire$0&#39;)" /></td><td>15</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;CollegeBooks$0&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>2</td><td>تفاضل وتكامل 101_1</td><td>ممتاز</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;Questionnaire$1&#39;)" /></td><td>18</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;CollegeBooks$1&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>3</td><td>جبر 102_1</td><td>ممتاز</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;Questionnaire$2&#39;)" /></td><td>19</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;CollegeBooks$2&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>4</td><td>فقه اسلامى_1</td><td>جيد</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;Questionnaire$3&#39;)" /></td><td>14</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;CollegeBooks$3&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td style="background-color:#f480a1;">5</td><td style="background-color:#f480a1;">كهربية وتيار متردد 102_1</td><td style="background-color:#f480a1;">ضعيف</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;Questionnaire$4&#39;)" /></td><td>17</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;CollegeBooks$4&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td style="background-color:#f480a1;">6</td><td style="background-color:#f480a1;">موجات وبصريات 101_1</td><td style="background-color:#f480a1;">ضعيف</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;Questionnaire$5&#39;)" /></td><td>16</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm1&#39;,&#39;CollegeBooks$5&#39;)" /></td>
+		</tr>
+	</table>
+</div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+
+                            <span id="ContentPlaceHolder1_Label38" style="color:#CCFFCC;background-color:Red;font-family:Times New Roman;font-size:X-Large;font-weight:bold;text-decoration:none;">'''                   سجل درجات الطالب من العام الحالي الفصل الدراسي الثاني                      '''</span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+
+                    <div>
+	<table cellspacing="2" cellpadding="3" rules="all" id="ContentPlaceHolder1_GridViewTerm2" style="background-color:#DEBA84;border-color:#DEBA84;border-width:1px;border-style:None;font-family:Times New Roman;font-size:Large;width:1004px;">
+		<tr style="color:White;background-color:#A55129;font-weight:bold;">
+			<th scope="col">م</th><th scope="col">اسم المقرر</th><th scope="col">التقدير</th><th scope="col">الشفوي</th><th scope="col">العملي</th><th scope="col">اعمال السنة</th><th scope="col">لعام</th><th scope="col">استبيان</th><th scope="col">&nbsp;</th><th scope="col">محاضرات</th>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>1</td><td>الكيمياء العامة 104_1</td><td>مقبول</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;Questionnaire$0&#39;)" /></td><td>24</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;CollegeBooks$0&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td style="background-color:Red;">2</td><td style="background-color:Red;">حرارة وديناميكا حرارية 103_1</td><td style="background-color:Red;">ضعيف جدًا</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;Questionnaire$1&#39;)" /></td><td>23</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;CollegeBooks$1&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td style="background-color:#f480a1;">3</td><td style="background-color:#f480a1;">ديناميكا 112_1</td><td style="background-color:#f480a1;">ضعيف</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;Questionnaire$2&#39;)" /></td><td>22</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;CollegeBooks$2&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>4</td><td>عقيدة واخلاق_1</td><td>مقبول</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;Questionnaire$3&#39;)" /></td><td>20</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;CollegeBooks$3&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>5</td><td>قرآن كريم_1</td><td>جيد جدًا</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;Questionnaire$4&#39;)" /></td><td>13</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;CollegeBooks$4&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td style="background-color:#f480a1;">6</td><td style="background-color:#f480a1;">لغة انجليزية_1</td><td style="background-color:#f480a1;">ضعيف</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;Questionnaire$5&#39;)" /></td><td>25</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;CollegeBooks$5&#39;)" /></td>
+		</tr><tr style="color:#8C4510;background-color:#FFF7E7;">
+			<td>7</td><td>هندسة 103_1</td><td>مقبول</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>2026</td><td><input type="button" value="استبيان" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;Questionnaire$6&#39;)" /></td><td>21</td><td><input type="button" value="محاضرات" onclick="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridViewTerm2&#39;,&#39;CollegeBooks$6&#39;)" /></td>
+		</tr>
+	</table>
+</div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+
+                            <span id="ContentPlaceHolder1_Label34" style="color:Lime;background-color:#CC3300;font-family:Times New Roman;font-size:X-Large;font-weight:bold;text-decoration:none;">'''                   سجل درجات الطالب - الاعوام السابقة                      '''</span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                    <div>
+
+</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+
+                            <span id="ContentPlaceHolder1_Label35" style="color:#FFFFCC;background-color:#FF3300;border-color:#FF3300;font-family:Times New Roman;font-size:XX-Large;font-weight:bold;text-decoration:none;">'''                   بيان بتقديرات الطالب -البيانات استرشادية وقابلة للتغيير في حالة وجود مقررات تخلفات                      '''</span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                             <div>
+	<table cellspacing="0" cellpadding="4" rules="all" id="ContentPlaceHolder1_GridView9" style="background-color:White;border-color:#CC9966;border-width:1px;border-style:None;font-family:Times New Roman;font-size:Large;width:1004px;border-collapse:collapse;">
+		<tr style="color:#FFFFCC;background-color:#990000;font-weight:bold;">
+			<th scope="col">الفرقة الاولى</th><th scope="col">الفرقة الثانية</th><th scope="col">الفرقة الثالثة</th><th scope="col">الفرقة الرابعة</th><th scope="col">&nbsp;</th>
+		</tr><tr style="color:#330099;background-color:White;">
+			<td>راسـب</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+	</table>
+</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+
+                            <span id="ContentPlaceHolder1_Label36" style="color:#FFFFCC;background-color:#FF3300;border-color:#FF3300;font-family:Times New Roman;font-size:XX-Large;font-weight:bold;text-decoration:none;">'''                   التقديرات والنسب النهائية التي يعتد بها هي البيانات الورقية الموجودة بالكلية                      '''</span>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+            <div >
+
+
+
+            </div>
+ 
+
+        <div style="right:500px; font-family:'Times New Roman', Times, serif; text-align:right; color:black;background-color:lightblue">
+<h3>يرجي الرجوع الى شئون الطلاب بالكلية لتأكيد النتيجة</h3>
+            <h4>ممتاز= م ،  من 85% إلى 100 % من درجات المقرر</h4>
+              <h4>جيد جدا= جـ جـ  ، 75 % واقل من 85 % من درجات المقرر</h4>
+              <h4>جيد=  جـ   ، 65 % واقل من 75 % من درجات المقرر</h4>
+              <h4>مقبول=  ل ،  60 % واقل من 65 % من درجات المقرر</h4>
+              <h4>ضعيف=  ض  ، 30 % واقل من 60 % من درجات المقرر</h4>
+              <h4>ضعيف جدا= ض  جـ  ، 0 % واقل من 30 % من درجات المقرر</h4>
+              <h4>------------</h4>
+        </div>
+             <div>
+
+        </div>
+        </div>
+    </div>
+
+                                  
+
+             
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+  
+ 
+       <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>
+                        <span id="Label1NumberofVisitors">انت الزائر رقم  15021082</span>  </h3>
+                    <p>موقع كلية العلوم بنين جامعة الأزهر بأسيوط.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/Science.Azhar.Assuit"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>
+                        
+                        روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">عن الموقع</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                            
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <p>
+                        <span id="LabelMAX">4</span>
+                        <i class="fas fa-map-marker-alt"></i>  مصر - اسيوط - فيصل</p>
+                    <p>
+                        <i class="fas fa-phone"></i> +2088</p>
+                    <p><i class="fas fa-envelope"></i> 
+                        
+                        <span id="Label_Year">Label</span>
+                        info@azhar.edu.eg</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة - كلية العلوم بنين جامعة الأزهر بأسيوط &copy; <span id="current-year"></span> موقع كلية العلوم بنين اسيوط جامعة الأزهر</p>
+            </div>
+        </div>
+    </footer>
+  
+
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    
+    
+    </div>
+  
+    <script>
+        // تحديث التاريخ والوقت
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('ar-EG', options);
+            document.getElementById('current-date').textContent = dateString;
+            
+            // تحديث السنة في الفوتر
+            document.getElementById('current-year').textContent = now.getFullYear();
+        }
+        
+        updateDateTime();
+        
+        // زر العودة للأعلى
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // تصفية الأخبار حسب التصنيف
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const newsCards = document.querySelectorAll('.news-card');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // إزالة التنشيط من جميع الأزرار
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // تفعيل الزر المحدد
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                // تصفية الأخبار
+                newsCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // تأثير التمرير السلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // تأثير ظهور العناصر عند التمرير
+        </script>
+    </body>
+  
+</html>
